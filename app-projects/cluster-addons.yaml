@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cluster-addons
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - name: in-cluster
+    namespace: '*'
+    server: https://kubernetes.default.svc
+  - name: talos-test
+    namespace: '*'
+    server: https://192.168.0.11:6443
+  - name: talos-staging
+    namespace: '*'
+    server: https://192.168.0.14:6443
+  sourceRepos:
+  - https://github.com/maor-klir/homelab-2

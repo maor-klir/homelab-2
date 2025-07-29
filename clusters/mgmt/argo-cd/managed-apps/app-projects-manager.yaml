@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-cd-bootstrap
+  name: app-projects-manager
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: argocd-managed
   source:
     repoURL: https://github.com/maor-klir/homelab-2.git
     targetRevision: HEAD
-    path: clusters/mgmt/argo-cd/apps
+    path: app-projects
   destination:
-    name: in-cluster
+    naem: in-cluster
     server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
