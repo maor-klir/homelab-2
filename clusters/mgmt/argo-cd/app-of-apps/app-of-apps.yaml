@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/maor-klir/homelab-2.git
     targetRevision: HEAD
-    path: clusters/mgmt/argo-cd/apps
+    path: clusters/mgmt/argo-cd/managed-apps
   destination:
     name: in-cluster
     namespace: argocd
