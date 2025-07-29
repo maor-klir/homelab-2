@@ -10,6 +10,5 @@ spec:
   destinations:
   - name: in-cluster
     namespace: argocd
-    server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/maor-klir/homelab-2

@@ -13,7 +13,6 @@ spec:
     path: clusters/mgmt/argo-cd/apps
   destination:
     name: in-cluster
-    server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
     automated:
