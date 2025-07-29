@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
     path: app-projects
   destination:
-    naem: in-cluster
+    name: in-cluster
     namespace: argocd
   syncPolicy:
     automated:
