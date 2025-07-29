@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-cd-managed
+  namespace: argocd
+spec:
+  project: argocd-managed
+  source:
+    repoURL: https://github.com/maor-klir/homelab-2.git
+    targetRevision: HEAD
+    path: clusters/mgmt/argo-cd/install 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
